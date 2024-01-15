@@ -21,12 +21,23 @@ repositories {
 	mavenCentral()
 }
 
+extra["springCloudVersion"] = "2023.0.0"
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	implementation("org.springframework.cloud:spring-cloud-starter-config")
+	implementation ("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server")
+}
+
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+	}
 }
 
 tasks.withType<Test> {
