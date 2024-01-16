@@ -44,6 +44,10 @@ dependencies {
 
     // H2
     runtimeOnly("com.h2database:h2")
+
+    // Resilience4j
+    implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation("io.github.resilience4j:resilience4j-spring-boot2")
 }
 
 dependencyManagement {
