@@ -48,6 +48,13 @@ dependencies {
     // Resilience4j
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("io.github.resilience4j:resilience4j-spring-boot2")
+
+    // Micrometer
+    implementation("io.micrometer:micrometer-observation")
+    // Option 1 : Open Telemetry as Bridge
+    // Open Telemetry - Simplified Observability (metrics, logs, and traces)
+    implementation("io.micrometer:micrometer-tracing-bridge-otel")
+    implementation("io.opentelemetry:opentelemetry-exporter-zipkin")
 }
 
 dependencyManagement {

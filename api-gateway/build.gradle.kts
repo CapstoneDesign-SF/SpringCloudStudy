@@ -33,6 +33,13 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	// Micrometer
+	implementation("io.micrometer:micrometer-observation")
+	// Option 1 : Open Telemetry as Bridge
+	// Open Telemetry - Simplified Observability (metrics, logs, and traces)
+	implementation("io.micrometer:micrometer-tracing-bridge-otel")
+	implementation("io.opentelemetry:opentelemetry-exporter-zipkin")
 }
 
 dependencyManagement {
